@@ -26,7 +26,7 @@ namespace BoxVolumeCalculatorWithTCP
             {
                 using (TcpClient client = listener.AcceptTcpClient())
                 {
-                    Task.Run( () => DoClient(client));
+                    Task.Run( () => DoClient(client));         //Task gør, at det kører async, altså at flere clienter kan køre parallelt med hinanden
                 }
             }
         }
