@@ -8,8 +8,14 @@ namespace BoxVolumeCalculatorWithTCP
 {
     class Program
     {
+        private const int PORT = 9999;
+
         static void Main(string[] args)
         {
+            ServerClass server = new ServerClass(PORT);
+            server.Start();
+
+            Console.ReadLine();
         }
     }
 }
