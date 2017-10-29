@@ -22,7 +22,7 @@ namespace BVCClient
             string clientMessage = "volume 2 2 2";
             SendRequest(clientMessage);
 
-            string clientMessage2 = "side 10 2 2.5";
+            string clientMessage2 = "side 10 2 2";
             SendRequest(clientMessage2);
         }
 

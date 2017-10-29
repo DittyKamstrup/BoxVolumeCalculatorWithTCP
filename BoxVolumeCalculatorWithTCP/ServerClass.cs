@@ -24,10 +24,8 @@ namespace BoxVolumeCalculatorWithTCP
 
             while (true)
             {
-                using (TcpClient client = listener.AcceptTcpClient())
-                {
-                    Task.Run( () => DoClient(client));         //Task gør, at det kører async, altså at flere clienter kan køre parallelt med hinanden
-                }
+                TcpClient client = listener.AcceptTcpClient();
+                Task.Run(() => DoClient(client));         //Task gør, at det kører async, altså at flere clienter kan køre parallelt med hinanden (assignment 5.c, multi-threaded)
             }
         }
 
@@ -62,9 +60,9 @@ namespace BoxVolumeCalculatorWithTCP
                     writer.Flush();
                 }
 
-                client.Close();
 
             }
+            client.Close();
         }
 
     }
